@@ -65,6 +65,28 @@ public class C05RoopPractice {
         System.out.println(Arrays.toString(myArr));
 
 //        자바 변수의 유효 범위 : {}
+        int num1 = 10;
+        if (num1 > 1) {
+            int abc = 20;
+            num1 = 20;
+        }
+        System.out.println(num1); // 접근가능
+//        System.out.println(abc); // 접근 불가
 
+        for (int i = 2; i < 10; i++) {
+            System.out.println(i + "단 입니다.");
+            for (int j = 1; j < 10; j++) {
+                System.out.println(i + " x " + j + " = " + i * j);
+            }
+        }
+        
+        int [][] arr ={{1,2,3,4},{5,6,7,8}};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.println(arr[i][j]);
+            }
+        }
+
+        System.out.println(Arrays.deepToString(arr));
     }
 }
