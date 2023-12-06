@@ -31,6 +31,10 @@ public class c03Operator {
 //        3. 비교 연산자 : ==. !=, >, >=
         char char_1 = 'a';
         char char_2 = 'A';
+        char ch1 = 'a';
+        int ch1_num = ch1;
+        System.out.println("ch1_num = " + ch1_num);
+
         System.out.println(char_1 == char_2); // false
         System.out.println(char_1 != char_2); // true
 
@@ -42,10 +46,5 @@ public class c03Operator {
         result2 = num4 < 10 || num4 <30 ;
         System.out.println("result1 = " + result1);
         System.out.println("result2 = " + !result2);
-
-//        5. 비트 연산자
-
-
-
     }
 }
