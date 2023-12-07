@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.sql.Array;
 
 public class C02Variable {
 
@@ -81,9 +82,15 @@ public class C02Variable {
         double d2 = aa / (double)bb;
         System.out.println("d2 = " + d2);
 
-//        선언과 동시에 초기화
-        int a1 = 10;
+//        선언 만 한 뒤에 나중에 초기화
+        int a1 = 10; // 지역변수는 선언만 됐을때는 값이 0 으로 초기화 되지 않으나, 객체로 선언될때는 0 으로 초기화 
         a1 = 20;
+
+        // 객체로 만들때는 0으로 치과 된다.
+        int[] ints = new int[5];
+        System.out.println("ints[0] = " + ints[0]);
+        System.out.println(ints);
+
 
         int a2; // 선언만 됐을때는 값이 0으로 초기화
         a2 = 20;
