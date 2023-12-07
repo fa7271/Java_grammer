@@ -4,11 +4,11 @@ import java.util.stream.IntStream;
 public class C05RoopPractice {
     public static void main(String[] args) {
 
-        int sum_A = IntStream.rangeClosed(1,20).filter(x-> x%2==0).sum();
+        int sum_A = IntStream.rangeClosed(1, 20).filter(x -> x % 2 == 0).sum();
 
 
         int sum = 0;
-        for(int i = 1; i <= 20; i ++){
+        for (int i = 1; i <= 20; i++) {
             if (i % 2 == 0) {
                 sum += i;
             }
@@ -18,7 +18,7 @@ public class C05RoopPractice {
         int number = 1234;
 
         int result = 0;
-        while (number!=0) {
+        while (number != 0) {
             int temp = number % 10;
             result = result * 10 + temp;
             number /= 10;
@@ -26,9 +26,10 @@ public class C05RoopPractice {
         System.out.println(result);
 
 //        최대공약수 구하기
-        int a = 24 ; int b = 36;
+        int a = 24;
+        int b = 36;
         int answer = 0;
-        int min = a<b ? a : b;
+        int min = a < b ? a : b;
 
         for (int i = 1; i <= min; i++) {
             if (a % i == 0 && b % i == 0) {
@@ -38,10 +39,10 @@ public class C05RoopPractice {
         System.out.println("answer = " + answer);
 //        최소공배수
 
-        int result1 = answer * (a/answer) * (b/answer);
+        int result1 = answer * (a / answer) * (b / answer);
         System.out.println("result = " + result1);
 
-        int[] myArr = {1,5,7,9,10};
+        int[] myArr = {1, 5, 7, 9, 10};
 //        일반 for 문
         for (int i = 0; i < 5; i++) {
             System.out.println(myArr[i]);
@@ -79,14 +80,40 @@ public class C05RoopPractice {
                 System.out.println(i + " x " + j + " = " + i * j);
             }
         }
-        
-        int [][] arr ={{1,2,3,4},{5,6,7,8}};
+
+        int[][] arr = {{1, 2, 3, 4}, {5, 6, 7, 8}};
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[0].length; j++) {
                 System.out.println(arr[i][j]);
             }
         }
 
-        System.out.println(Arrays.deepToString(arr));
+        int[][] matirx = {{1, 2, 3, 4}, {5, 6, 7,}, {8, 9}, {10, 11, 12, 13, 14}};
+        System.out.println(Arrays.deepToString(matirx));
+        int target = 11;
+
+    /*    roop1:
+        for (int i = 0; i < matirx.length; i++) {
+            for (int j = 0; j < matirx[i].length; j++) {
+                if (matirx[i][j] == target) {
+                    System.out.println("i :" + i + " j :" + j);
+                    break roop1;
+                }
+            }
+        }
+        */
+        roop1:
+        for (int i = 1; i < 20; i++) {
+            int count = 0;
+            roop2:
+            for (int j = 1; j <= i ; j++) {
+                if (i % j == 0) {
+                    count ++;
+                } else if (count >= 5) {
+                    System.out.println(i);
+                    break roop1;
+                }
+            }
+        }
     }
 }

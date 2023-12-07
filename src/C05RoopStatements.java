@@ -37,11 +37,13 @@ public class C05RoopStatements {
         }
         if (res.isEmpty()) System.out.println("입력횟수를 초과 했습니다.");
 */
+        /*
         int i = 0;
         do {
             System.out.println("시작하겠습니다.");
             i++;
         } while (i < 10);
+*/
 
 //        IntStream.rangeClosed(2,10).forEach(System.out::println);
 
@@ -51,6 +53,28 @@ public class C05RoopStatements {
             if (a1 % 2 == 0) {
                 continue;
             }else System.out.println(a1);
+        }
+
+        int a = 12, b = 36;
+
+        while(b!=0) {
+            int r=a%b;
+            a=b;
+            b=r;
+            System.out.println("b = " + b);
+        }
+        System.out.println("최대 공약수");
+        System.out.println(a);
+
+        loop1:
+        for (int i = 0; i < 5; i ++ ){
+            loop2:
+            for (int j =0; j<5 ; j++){
+                System.out.println("hello world : " + i + "j : " + j);
+                if (j == 2) {
+                    break loop2;
+                }
+            }
         }
 
 
