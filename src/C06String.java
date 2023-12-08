@@ -1,8 +1,7 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class C06String {
     public static void main(String[] args) {
@@ -27,7 +26,9 @@ public class C06String {
 //        String 과 Int 형 변환
         int A = 10;
         String st_A = Integer.toString(A);
+        String st_B = String.valueOf(a);
         System.out.println("st_A = " + st_A); // "10"
+        System.out.println("st_B = " + st_B);
         int C = Integer.parseInt(st_A); // 10
 
         // 참조자료형에 원시자료형을 담을 때는 wrapper(Integer) 클래스를 써야한다.
@@ -156,7 +157,7 @@ public class C06String {
         String[] sp_arr2 = split_b.split("\\s+");
         System.out.println("sp_arr2 = " + Arrays.toString(sp_arr2));
 
-        String str_null = null;
+/*        String str_null = null;
         String str_null1 = "";
 
         System.out.println(str_null == null);
@@ -168,7 +169,71 @@ public class C06String {
 
         String[] arr = new String[5];
         arr[0] = "hello";
-        arr[1] = "world";
+        arr[1] = "world";*/
 
+
+//        String.join(지정구문자, 문자배열);
+        String[] arr2 = {"song", "bo", "seok"};
+        System.out.println(String.join(" ", arr2));
+
+//        StringBuffer 는 문자열을 추가하거나 변경 할 때 주로 사용하는 객체
+        StringBuffer buf = new StringBuffer();
+        buf.append(" java");
+        buf.append("world");
+        String new_str = buf.toString();
+        System.out.println("new_str = " + new_str);
+
+
+        StringBuffer sb1 = new StringBuffer("hello");
+
+        sb1.append(" world");
+        System.out.println("sb1 = " + sb1);
+
+        sb1.insert(5, " java");
+        System.out.println("sb1 = " + sb1);
+
+        System.out.println(sb1.substring(6,10));
+        System.out.println("sb1 = " + sb1);
+        sb1.delete(6, 10);
+        System.out.println("sb1 = " + sb1);
+
+
+        StringBuilder sb2 = new StringBuilder("hello");
+        sb2.append("world");
+        System.out.println(sb2);
+
+        String myString = "hello";
+        int n = 3;
+        StringBuffer sb3 = new StringBuffer();
+
+
+        String AAAA = "hello";
+        String BBBB = "ohell";
+
+        String[] listA = AAAA.split("");
+        String[] listB = BBBB.split("");
+
+        List<String> listAA = Arrays.asList(listA);
+        List<String> listBB = Arrays.asList(listB);
+
+        int cout = 0;
+        for (int i = 0; i < listAA.size(); i++) {
+            Collections.rotate(listAA,1);
+            cout ++;
+            if (String.join("",listAA) == String.join("",listBB)){
+                System.out.println(cout);
+                break;
+            }else{
+                System.out.println(cout);
+                break;
+            }
+        }
     }
+
 }
+//for i in range(len(A)):
+//        deque_A.rotate(1)
+//        count += 1
+//        if deque_A == deque_B:
+//        return count
+//        else: return -1
