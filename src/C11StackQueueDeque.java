@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
 
-public class C11StackQueue {
+public class C11StackQueueDeque {
     public static void main(String[] args) {
         Stack<Object> stk = new Stack<>();
         stk.push(10);
@@ -126,15 +126,14 @@ public class C11StackQueue {
         }
 
         int[] scoville = {1, 2, 3, 9, 10, 12};
-
+        int count = 0;
+        int K = 7;
 /*
         int[] scoville = {1, 2, 3, 9, 10, 12};
         ArrayList<Integer> Q = new ArrayList<>();
         for (int i = 0; i < scoville.length; i++) {
             Q.add(scoville[i]);
         }
-        int K = 7;
-        int count = 0;
 
         while (Q.get(0) < K) {
             int x = Q.get(0);
@@ -156,13 +155,28 @@ public class C11StackQueue {
             Q.add(scoville[i]);
         }
         System.out.println("Q = " + Q);
-        while (Q.peek() < k) {
+        while (Q.peek() < K) {
             Q.add(Q.poll() + Q.poll() * 2);
             count ++;
-            if (Q.size() == 1 && Q.peek() < k)
-                return -1;
+            if (Q.size() == 1 && Q.peek() < K)
+                System.out.println(count);
         }
-        return count;
+        System.out.println(count);
+
+//        ArrayDeque : 양 방향에서 데이터를 삽입 / 제거 할 수 있다.
+//        성능 빠름.
+        ArrayDeque<Object> deque = new ArrayDeque<>();
+
+        deque.addFirst(10);
+        deque.addFirst(20);
+        System.out.println("my = " + deque);
+        deque.addLast(30);
+
+        System.out.println("deque = " + deque);
+        System.out.println("deque = " + deque.pollFirst());
+        System.out.println("deque = " + deque.pollLast());
+
+
 
     }
 }
