@@ -94,10 +94,9 @@ public class AuthorPostService {
 //                            temp_post_author = a;
 //                        }
 //                    }
-                    System.out.println(temp_post.getTitle() + " " + temp_post_author.getEmail());
+                    System.out.println(temp_post.getTitle() + " " + temp_post.getAuthor().getEmail());
                     break;
             }
-
         }
     }
 }
